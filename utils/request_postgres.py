@@ -73,7 +73,6 @@ def consulta_clientes_aliados(CLAVE_AGENTE = None,TIPO_DOCUMENTO_ASEGURADO = Non
               "FECHA_SARLAFT_ORDINARIO",
               "NUMERO_POLIZA",
               "PRODUCTO_POLIZA",
-              "ESTADO_POLIZA",
               "ROL",
               "VALOR_ASEGURADO",
               "VALOR_PRIMA",
@@ -94,8 +93,7 @@ def consulta_clientes_aliados(CLAVE_AGENTE = None,TIPO_DOCUMENTO_ASEGURADO = Non
               "VIGENCIA_FIN_POLIZA_MADRE",
               "PERIODICIDAD_PAGO",
               "FORMA_PAGO",
-              "CANAL_DE_DESCUENTO",
-              "VALOR_ASEGURADO"
+              "CANAL_DE_DESCUENTO"
             FROM "api_backend"."paliados_clientes"
             WHERE {where_sql};
         """

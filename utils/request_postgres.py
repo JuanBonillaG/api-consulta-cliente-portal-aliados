@@ -93,7 +93,7 @@ def consulta_clientes_aliados(CLAVE_AGENTE = None,TIPO_DOCUMENTO_ASEGURADO = Non
               "FORMA_PAGO",
               "CANAL_DE_DESCUENTO",
               "VALOR_ASEGURADO"
-            FROM "api_backend"."t_cliente_portal_aliados"
+            FROM "api_backend"."paliados_clientes"
             WHERE {where_sql};
         """
 

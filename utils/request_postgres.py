@@ -37,9 +37,9 @@ def consulta_clientes_aliados(CLAVE_AGENTE = None,TIPO_DOCUMENTO_ASEGURADO = Non
         for key, value in filtros.items():
             if value is not None:
                 if key in ("CLAVE_AGENTE","NUMERO_DOCUMENTO_ASEGURADO"):
-                    where_clauses.append(f"{key} = {value}")
+                    where_clauses.append(f'"{key}" = {value}')
                 else:
-                    where_clauses.append(f"{key} = '{value}'")
+                    where_clauses.append(f'"{key}" = \'{value}\'')
                 params[key] = value
 
         # Verificar si se proporcionaron filtros

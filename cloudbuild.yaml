@@ -45,6 +45,7 @@ steps:
         --platform managed \
         --service-account sb-xops-prod@appspot.gserviceaccount.com \
         --labels billing-tags=api_cliente_portal_aliados
+        --memory 1Gi
 
 options:
   logging: CLOUD_LOGGING_ONLY

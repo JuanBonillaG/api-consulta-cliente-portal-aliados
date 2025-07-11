@@ -36,7 +36,7 @@ def consulta_clientes_aliados(CLAVE_AGENTE = None,TIPO_DOCUMENTO_ASEGURADO = Non
         # Construir las cláusulas WHERE dinámicamente (solo si el filtro es enviado dentro del body)
         for key, value in filtros.items():
             if value is not None:
-                where_clauses.append(f'"{key}" = :{key}')
+                where_clauses.append(f'"{key}" = {value}')
                 params[key] = value
 
         # Verificar si se proporcionaron filtros

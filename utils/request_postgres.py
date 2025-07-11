@@ -36,7 +36,7 @@ def consulta_clientes_aliados(CLAVE_AGENTE = None,TIPO_DOCUMENTO_ASEGURADO = Non
         # Construir las cláusulas WHERE dinámicamente (solo si el filtro es enviado dentro del body)
         for key, value in filtros.items():
             if value is not None:
-                where_clauses.append(f'"{key}" = {value}')
+                where_clauses.append(f"{key} = '{value}'")
                 params[key] = value
 
         # Verificar si se proporcionaron filtros
@@ -49,7 +49,6 @@ def consulta_clientes_aliados(CLAVE_AGENTE = None,TIPO_DOCUMENTO_ASEGURADO = Non
         where_sql = " AND ".join(where_clauses)
 
         # Construir la consulta SQL
-        #TODO: Crar clientes_portal_aliados en api_backend
         query = f"""
             SELECT 
               "CLAVE_AGENTE",
@@ -96,6 +95,8 @@ def consulta_clientes_aliados(CLAVE_AGENTE = None,TIPO_DOCUMENTO_ASEGURADO = Non
             FROM "api_backend"."paliados_clientes"
             WHERE {where_sql};
         """
+
+        print(query)
 
         response = request_postgres(query, params)
         response = json.loads(response.to_json(orient='records', date_format='iso'))

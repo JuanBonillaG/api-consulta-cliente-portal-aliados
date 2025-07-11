@@ -97,8 +97,7 @@ def consulta_clientes_aliados(CLAVE_AGENTE = None,TIPO_DOCUMENTO_ASEGURADO = Non
               "CANAL_DE_DESCUENTO",
               "VALOR_ASEGURADO"
             FROM "api_backend"."paliados_clientes"
-            WHERE {where_sql}
-            LIMIT 1;
+            WHERE {where_sql};
         """
 
         print(query)

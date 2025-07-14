@@ -59,7 +59,7 @@ async def api_consulta_afiliacion_empresa(body: dict):
         NUMERO_DOCUMENTO_ASEGURADO=id_documento,
         NOMBRE=nombre,
         ESTADO_POLIZA=estado_poliza,
-        CODIGO_PRODUCTO=producto
+        NOMBRE_PRODUCTO=producto
     )
     return response
 

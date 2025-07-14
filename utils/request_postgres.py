@@ -18,7 +18,7 @@ def request_postgres(input_query, params):
     
     return data
 
-def consulta_clientes_aliados(CLAVE_AGENTE = None,TIPO_DOCUMENTO_ASEGURADO = None,NUMERO_DOCUMENTO_ASEGURADO = None,NOMBRE = None,ESTADO_POLIZA = None,CODIGO_PRODUCTO = None,):
+def consulta_clientes_aliados(CLAVE_AGENTE = None,TIPO_DOCUMENTO_ASEGURADO = None,NUMERO_DOCUMENTO_ASEGURADO = None,NOMBRE = None,ESTADO_POLIZA = None,NOMBRE_PRODUCTO = None,):
     try:
         filtros = {
             "CLAVE_AGENTE": CLAVE_AGENTE,
@@ -26,7 +26,7 @@ def consulta_clientes_aliados(CLAVE_AGENTE = None,TIPO_DOCUMENTO_ASEGURADO = Non
             "NUMERO_DOCUMENTO_ASEGURADO": NUMERO_DOCUMENTO_ASEGURADO,
             "NOMBRE": NOMBRE,
             "ESTADO_POLIZA": ESTADO_POLIZA,
-            "CODIGO_PRODUCTO": CODIGO_PRODUCTO
+            "NOMBRE_PRODUCTO": NOMBRE_PRODUCTO
         }
 
         # Inicializar las cláusulas WHERE y los parámetros
@@ -60,7 +60,6 @@ def consulta_clientes_aliados(CLAVE_AGENTE = None,TIPO_DOCUMENTO_ASEGURADO = Non
               "NUMERO_DOCUMENTO_ASEGURADO",
               "NOMBRE",
               "ESTADO_POLIZA",
-              "CODIGO_PRODUCTO",
               "CIUDAD",
               "DIRECCION",
               "CELULAR",
@@ -82,7 +81,7 @@ def consulta_clientes_aliados(CLAVE_AGENTE = None,TIPO_DOCUMENTO_ASEGURADO = Non
               "FECHA_EMISION",
               "CODIGO_RAMO_EMISION",
               "NOMBRE_RAMO_EMISION",
-              "CODIGO_SUBPRODUCTO",
+              "NOMBRE_PRODUCTO",
               "NOMBRE_SUBPRODUCTO",
               "NUMERO_POLIZA_MADRE",
               "CANTIDAD_RIESGOS",
